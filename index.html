@@ -55,12 +55,13 @@
         var step = 0;
 
         var loader = new THREE.STLLoader();
-        var group = new THREE.Object3D();
+        var group = new THREE.Group();
         loader.load("./Pawn.stl", function (geometry) {
             console.log(geometry);
             var mat = new THREE.MeshLambertMaterial({color: 0x7777ff});
-            group = new THREE.Mesh(geometry, mat);
-            group.rotation.x = -0.5 * Math.PI;
+            var mesh = new THREE.Mesh(geometry, mat);
+            mesh.rotation.x = -0.5 * Math.PI;
+            group.add(mesh);
             group.scale.set(1, 1, 1);
             scene.add(group);
         });
