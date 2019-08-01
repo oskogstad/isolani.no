@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
->
+    
 <!-- Div which will hold the Output -->
 <div id="WebGL-output">
 </div>
@@ -52,7 +52,6 @@
         // call the render function
         var step = 0;
 
-        // model from http://www.thingiverse.com/thing:69709
         var loader = new THREE.STLLoader();
         var group = new THREE.Object3D();
         loader.load("./Pawn.stl", function (geometry) {
@@ -60,7 +59,7 @@
             var mat = new THREE.MeshLambertMaterial({color: 0x7777ff});
             group = new THREE.Mesh(geometry, mat);
             group.rotation.x = -0.5 * Math.PI;
-            group.scale.set(0.6, 0.6, 0.6);
+            group.scale.set(1, 1, 1);
             scene.add(group);
         });
 
