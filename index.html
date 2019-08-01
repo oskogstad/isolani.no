@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    
+
 <!-- Div which will hold the Output -->
 <div id="WebGL-output">
 </div>
@@ -25,6 +25,8 @@
     function init() {
         // create a scene, that will hold all our elements such as objects, cameras and lights.
         var scene = new THREE.Scene();
+        
+        var axis = new THREE.Vector3(0.5,0,0.5);//tilted a bit on x and y - feel free to plug your different axis here
 
         // create a camera, which defines where we're looking at.
         var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -68,8 +70,10 @@
 
         function render() {
             if (group) {
-                group.rotation.z += 0.006;
-                group.rotation.x+=0.006;
+                group.rotateOnAxis(axis,0.01);
+                //group.rotation.z += 0.006;
+                //group.rotation.x += 0.006;
+                //group.rotation.y += 0.006;
             }
 
             // render using requestAnimationFrame
