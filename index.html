@@ -38,10 +38,10 @@
         webGLRenderer.shadowMapEnabled = true;
 
         // position and point the camera to the center of the scene
-        camera.position.x = 150;
-        camera.position.y = 150;
-        camera.position.z = 150;
-        camera.lookAt(new THREE.Vector3(0, 40, 0));
+        camera.position.x = 170;
+        camera.position.y = 30;
+        camera.position.z = 0;
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
 
         // add spotlight for the shadows
         var spotLight = new THREE.SpotLight(0xffffff);
@@ -62,7 +62,7 @@
             var mesh = new THREE.Mesh(geometry, mat);
             mesh.rotation.x = -0.5 * Math.PI; // Make the pawn stand upright
             group.add(mesh);
-            group.scale.set(1, 1, 1);
+            group.scale.set(1.25, 1.25, 1.25);
             scene.add(group);
         });
 
@@ -71,10 +71,7 @@
 
         function render() {
             if (group) {
-                group.rotateOnAxis(axis,0.01);
-                //group.rotation.z += 0.006;
-                //group.rotation.x += 0.006;
-                //group.rotation.y += 0.006;
+                group.rotateOnAxis(axis,0.005);
             }
 
             // render using requestAnimationFrame
