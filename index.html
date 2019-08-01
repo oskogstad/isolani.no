@@ -60,7 +60,7 @@
             console.log(geometry);
             var mat = new THREE.MeshLambertMaterial({color: 0x7777ff});
             var mesh = new THREE.Mesh(geometry, mat);
-            mesh.rotation.x = -0.5 * Math.PI;
+            mesh.rotation.x = -0.5 * Math.PI; // Make the pawn stand upright
             group.add(mesh);
             group.scale.set(1, 1, 1);
             scene.add(group);
