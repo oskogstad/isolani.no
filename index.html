@@ -58,6 +58,8 @@
         var group = new THREE.Group();
         loader.load("./Pawn.stl", function (geometry) {
             console.log(geometry);
+            geometry.computeBoundingBox();
+            geometry.center();
             var mat = new THREE.MeshLambertMaterial({color: 0x7777ff});
             var mesh = new THREE.Mesh(geometry, mat);
             mesh.rotation.x = -0.5 * Math.PI; // Make the pawn stand upright
